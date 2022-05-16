@@ -13,7 +13,7 @@ class: inverse
 3. Hello World - O Primeiro Programa
 4. Variáveis
 5. Operações Aritméticas
-6. Estruturas de Condição (if)
+6. Estruturas Oondicionais (if)
 7. Estruturas de Repetição (for, while)
 8. Funções
 9. Operações com Strings
@@ -245,7 +245,7 @@ tragedy = senate + also_senate
 print (tragedy)
 ```
 
-Ou com listas:
+**Listas**:
 ```python
 score_1P = [45, 58, 23, 97, 10]
 score_2P = [55, 60, 58, 82, 14]
@@ -257,10 +257,10 @@ print(all_scores)
 
 ---
 class: center, middle, inverse
-# Estruturas de Condição (**if**)
+# Estruturas Condicionais (**if**)
 
 ---
-# Estruturas de Condição
+# Estruturas Condicionais
 ## Operadores Lógicos
 
 - &gt; ("maior que")
@@ -286,11 +286,11 @@ print(value)
 ```
 
 ---
-# Estruturas de Condição
+# Estruturas Condicionais
 
 No entanto, a principal utilidade dos operadores lógicos está em permitir a criação de estruturas condicionais, que permitem executar certas secções de código apenas se certas condições se verificarem, através do uso de **if statements**.
 
-Estas estruturas seguem o seguinte modelo:
+Estas estruturas seguem o seguinte modelo (pseudo-código):
 ```
 if (<condição>):
     <instrução1>
@@ -309,7 +309,7 @@ else:
 ```
 
 ---
-# Estruturas de Condição
+# Estruturas Condicionais
 ## Exemplo 1: Verificação de Idade
 ```python
 idade = 16
