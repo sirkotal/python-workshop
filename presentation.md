@@ -67,7 +67,7 @@ class: center, middle
 ---
 
 # Hello World
-O programa "Hello World" é o típico primeiro programa que todos os iniciantes fazem numa qualquer nova linguagem de programação; em Python, este programa destaca-se pela sua simplicidade:
+O programa "Hello World" é o típico primeiro programa que todos os iniciantes fazem numa qualquer nova linguagem de programação; em Python, este programa destaca-se pela sua simplicidade (o mesmo programa em C++ abaixo para efeitos de comparação):
 
 ```python
 # O teu primeiro programa em Python! :)
@@ -85,7 +85,7 @@ int main()
     cout<<"Hello World";
 
     return 0;
-}```
+}
 
 
 ---
