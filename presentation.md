@@ -38,7 +38,7 @@ class: image-spaced
 ![](./intcomp.png)
 
 ---
-class: small-images, image-spaced
+
 
 # Programar em Python
 - **Replit**: https://replit.com/
