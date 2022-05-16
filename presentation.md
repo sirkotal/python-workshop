@@ -179,7 +179,7 @@ print (senate + " " + also_senate)
 
 As listas representam "contentores" com capacidade de armazenar vários dados; são utilizadas para armazenar conjuntos de dados de qualquer tipo (mesmo de tipos diferentes) numa única "coleção" de tamanho variável (no sentido em que podemos alterar o seu tamanho, se assim o desejarmos!).
 
-````python
+```python
 lista_1 = [1, 3.0, 45, -2, 89, 1456732]
 
 lista_2 = ["a", "67", 23, "Elden Ring"]
@@ -196,14 +196,17 @@ class: center, middle, inverse
 
 ---
 # Operações Aritméticas
-Em python, há 7 operações aritméticas básicas para realizar cálculos numéricos:
-- Soma, +
-- Subtração, -
-- Multiplicação, *
-- Divisão, /
-- Expoente, **
-- Divisão Inteira, //
-- Resto da Divisão Inteira, %
+Em Python, existem 7 operações aritméticas básicas que nos permitem realizar cálculos numéricos:
+
+- Soma, **+**
+- Subtração, **-**
+- Multiplicação, __*__
+- Divisão, **/**
+- Expoente, __**__
+- Divisão Inteira (Integer Division/Floor Division), **//**
+- Resto da Divisão Inteira (Modulus), **%**
+
+**NOTA**: Ao contrário de linguagens como C++, Python possui um símbolo específico que diferencia a divisão "normal" de divisão inteira!
 
 ---
 # Operações Aritméticas
