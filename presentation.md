@@ -46,7 +46,7 @@ class: small-images, image-spaced
 - Python 3.10 (Shell): https://www.python.org/downloads/release/python-3100/
 - **VS Code**: https://code.visualstudio.com/
 - **Pycharm**: https://www.jetbrains.com/pycharm/
-- Spyder/Anaconda: https://www.anaconda.com/
+- **Spyder/Anaconda**: https://www.anaconda.com/
 
 ![](./ide.png)
 
@@ -98,7 +98,8 @@ class: image-spaced
 
 # Variáveis
 ## O que é uma variável?
-Uma variável funciona como uma "caixa" onde podemos armazenar dados.
+
+Uma variável funciona como se fosse um "contentor", onde podemos armazenar dados.
 
 ![](./data2.jpg)
 
@@ -106,37 +107,71 @@ Uma variável funciona como uma "caixa" onde podemos armazenar dados.
 
 # Variáveis
 ## Tipos de variáveis nativos
-Em python, há 6 principais tipos de variáveis (tipos de dados) nativos da linguagem (isto é, sem ser necessário "instalar" extensões adicionais):
-- Números
+
+Em Python, há essencialmente 6 tipos principais de variáveis (tipos de dados) nativos da linguagem (isto é, sem ser necessário utilizar extensões adicionais):
+- Números (ints e floats)
 - Booleanos (Verdadeiro ou Falso)
 - Strings (cadeias de caratéres)
 - Listas 
-- Tuplos*
-- Dicionários*
+- Tuplos <--
+- Dicionários <--
 
-Estes dois últimos tipos de dados são mais complexos e serão abordados no final do workshop.
+(Estes dois últimos tipos de dados são mais complexos e serão abordados no final do workshop.)
+
+**NOTA**: Ao contrário de outras linguagens (como C++), é perfeitamente possível alterar uma variável int para uma variável do tipo string em Python, pois não é necessário atribuir nenhum tipo específico às variáveis.
 
 ---
 # Variáveis
 ## Números
 Números podem ser de naturezas distintas:
-- Números Inteiros (e.g. 42)
-- Números Reais (e.g. 2.81)
+- Números Inteiros - ints (e.g. 42)
+- Números Reais - floats (e.g. 2.81)
 - Números Reais representados em notação ciêntífica (e.g. 5.972e24, ou seja, 5.972 elevado a 24)
 - ...
 
+```python
+
+x = 3
+y = 2.5
+pi = 3.141592
+mach_10 = 3.43e3
+
+print (x + y)
+
+# Output: 5.5
+```
+
 ## Booleanos
-Valores booleanos seguem a Álgebra de Boole e podem tomar apenas dois valores:
+
+Valores booleanos seguem a Álgebra de Boole, podendo tomar apenas dois valores:
 - True (Verdadeiro)
 - False (Falso)
+
+```python
+best_halo_is_reach = True
+python_sucks = False
+print (best_halo_is_reach)
+
+# Output: True
+```
 
 ---
 # Variáveis
 ## Strings
-Strings representam cadeias de caráteres genéricas (letras, palavras ou frases). São sempre delimitadas por aspas. Exemplos:
+
+Strings representam cadeias de caráteres genéricas (letras, palavras, frases); as strings são **sempre** delimitadas por aspas.
 - "X"
-- "Galileu"
-- "The perks of being a Wallflower"
+- "2016"
+- "If only I could be so grossly incandescent!"
+
+```python
+senate = "Did you ever hear the tragedy of Darth Plagueis The Wise?"
+also_senate = "I thought not. It’s not a story the Jedi would tell you."
+
+print (senate + " " + also_senate)
+
+# Output: True
+```
 
 ## Listas
 Listas representam contentores de dados e podem (e devem) ser utilizados para armazer conjuntos de dados de tamanho constante ou variável. Exemplos:
