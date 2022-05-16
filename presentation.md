@@ -639,12 +639,14 @@ print(size)
 Da mesma forma, o **slice operator [m:n]** permite-nos aceder a substrings da string principal
 
 ```python
-frase = "Onde está o Wallie?"
-nome = frase[12:18]
-verbo = frase[5:9]
+senate = "Are you threatening me, Master Jedi?"
+part_1 = senate[10:18]
+part_2 = senate[5:7]
+reverse = senate[::-1]
 
-print(nome)
-print(verbo)
+print(part_1)
+print(part_2)
+print(reverse)
 ```
 
 
@@ -656,8 +658,8 @@ print(verbo)
 
 ```python
 amon_gus = "Los Pollos Hermanos"
-print(among_gus.upper())  # MAIÚSCULAS
-print(among_gus.lower())  # minúsculas
+print(amon_gus.upper())  # MAIÚSCULAS
+print(amon_gus.lower())  # minúsculas
 ```
 
 - **.find() Method**: Permite encontrar uma string dentro de uma outra string original, retornando o index do valor especificado (retorna **-1** se não encontrar nada).
