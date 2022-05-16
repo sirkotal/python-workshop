@@ -10,7 +10,7 @@ class: inverse
 
 1. Programação - O que é?
 2. Programar em Python
-3. Hello World
+3. Hello World - O Primeiro Programa
 4. Variáveis
 5. Operações Aritméticas
 6. Estruturas de Condição (if)
@@ -27,7 +27,7 @@ class: inverse
 class: image-spaced
 
 # Programação - O que é?
-**Linguagens de Alto Nível** - Linguagens de Programação como Java, C++ ou Python que precisam de ser traduzidas para algo que o computador consiga executar.
+**Linguagens de Alto Nível** - Linguagens de Programação, como Java, C++ ou Python, que precisam de ser traduzidas para algo que o computador consiga executar.
 
 ![](./prog.jpeg)
 
@@ -66,8 +66,8 @@ class: center, middle
 
 ---
 
-# Hello World
-O programa "Hello World" é o típico primeiro programa que todos os iniciantes fazem numa qualquer nova linguagem de programação; em Python, este programa destaca-se pela sua simplicidade (o mesmo programa em C++ abaixo para efeitos de comparação):
+# Hello World!
+O programa "Hello World" é o típico primeiro programa que todos os iniciantes fazem numa qualquer nova linguagem de programação; em Python, este programa destaca-se pela sua simplicidade (o mesmo programa em C++ abaixo, **apenas** para efeitos de comparação):
 
 ```python
 # O teu primeiro programa em Python! :)
@@ -86,19 +86,21 @@ int main()
 
     return 0;
 }
-
+```
 
 ---
 class: center, middle, inverse
 # Variáveis
 
+![](./data1.png)
 ---
 class: image-spaced
 
 # Variáveis
 ## O que é uma variável?
 Uma variável funciona como uma "caixa" onde podemos armazenar dados.
-![](./pic5.jpg)
+
+![](./data2.jpg)
 
 ---
 
