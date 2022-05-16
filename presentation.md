@@ -161,7 +161,7 @@ print (best_halo_is_reach)
 # Variáveis
 ## Strings
 
-Strings representam cadeias de caráteres genéricas (letras, palavras, frases); as strings são **sempre** delimitadas por aspas.
+Strings representam cadeias de caracteres genéricas (letras, palavras, frases); as strings são **sempre** delimitadas por aspas.
 - "X"
 - "2016"
 - "If only I could be so grossly incandescent!"
@@ -172,7 +172,7 @@ also_senate = "I thought not. It’s not a story the Jedi would tell you."
 
 print (senate + " " + also_senate)
 
-# Output: True
+# Output: Did you ever hear the tragedy of Darth Plagueis The Wise? I thought not. It’s not a story the Jedi would tell you.
 ```
 
 ## Listas
