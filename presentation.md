@@ -196,7 +196,7 @@ class: center, middle, inverse
 
 ---
 # Operações Aritméticas
-Em Python, existem 7 operações aritméticas básicas que nos permitem realizar cálculos numéricos:
+Em Python, existem 7 tipos de operações aritméticas básicas, que nos permitem realizar cálculos numéricos:
 
 - Soma, **+**
 - Subtração, **-**
@@ -211,85 +211,100 @@ Em Python, existem 7 operações aritméticas básicas que nos permitem realizar
 ---
 # Operações Aritméticas
 ```python
-num1 = 13
-num2 = 2
+x = 8
+y = 3
 
-print("num1 + num2 = ")   # Soma
-print(num1 + num2)
+print("x + y = ", x+y)   # Soma
 
-print("num1 - num2 = ")   # Subtração
-print(num1 - num2)
+print("x - y = ", x-y)  # Subtração
 
-print("num1 * num2 = ")   # Multiplicação
-print(num1 * num2)
+print("x * y = ", x*y)   # Multiplicação
 
-print("num1 / num2 = ")   # Divisão
-print(num1 / num2)
+print("x / y = ", x/y)   # Divisão
 
-print("num1 ** num2 = ")  # Expoente
-print(num1 ** num2)
+print("x ** y = ", x**y)  # Expoente
 
-print("num1 // num2 = ")  # Divisão Inteira
-print(num1 // num2)
+print("x // y = ", x//y)  # Divisão Inteira (Integer/Floor Division)
 
-print("num1 % num2 = ")   # Resto da Divisão Inteira
-print(num1 % num2)
+print("x % y = ", x%y)   # Resto da Divisão Inteira (Modulus)
 ```
 
 ---
 # Operações Aritméticas
-Os operadores aritméticos podem ser utilizados com outros tipos de variáveis (que não números). 
 
-Podem ser utilizados com strings:
+Apesar de ser principalmente utilizados para operações numéricas, alguns destes operadores podem também ser utilizados com outros tipos de variáveis (strings) ou até com coleções (listas) - ainda que a sua funcionalidade seja ligeiramente diferente!
+
+**Strings**:
+
 ```python
-agradecimento = "Thank you very much, "
-nome = "Chbosky"
+senate = "Did you ever hear the tragedy of Darth Plagueis The Wise?"
+also_senate = "I thought not. It’s not a story the Jedi would tell you."
 
-frase = agradecimento + nome
-print(frase)
+tragedy = senate + also_senate
+
+print (tragedy)
 ```
 
 Ou com listas:
 ```python
-lista1 = [1,2,3,4,5]
-lista2 = [6,7,8,9,10]
+score_1P = [45, 58, 23, 97, 10]
+score_2P = [55, 60, 58, 82, 14]
 
-listaGrande = lista1 + lista2
-print(listaGrande)
+all_scores = score_1P + score_2P
+
+print(all_scores)
 ```
 
 ---
 class: center, middle, inverse
-# Estruturas de Condição
+# Estruturas de Condição (**if**)
 
 ---
 # Estruturas de Condição
 ## Operadores Lógicos
-- &gt; (maior)
-- < (menor)
-- == (igual)
-- != (diferente)
-- &gt;= (maior ou igual)
-- <= (menor ou igual)
+
+- &gt; ("maior que")
+- < ("menor que")
+- == ("igual a")
+- != ("diferente de")
+- &gt;= ("maior ou igual que")
+- <= ("menor ou igual que")
 - and (logic AND - "e", operador booleano)
 - or (logic OR - "ou", operador booleano)
 - not (logic NOT - "não", operador booleano)
 
+Estes operadores permitem-nos obter valores lógicos por si só (True ou False).
+
+```python
+attempt = 8765
+
+key = 8764
+
+value = (attempt == key)
+
+print(value)
+```
+
 ---
 # Estruturas de Condição
-Estruturas de condição permitem-nos executar certas secções de código apenas se certas condições se verificarem.
+
+No entanto, a principal utilidade dos operadores lógicos está em permitir a criação de estruturas condicionais, que permitem executar certas secções de código apenas se certas condições se verificarem, através do uso de **if statements**.
 
 Estas estruturas seguem o seguinte modelo:
-```python
+```
 if (<condição>):
     <instrução1>
     <instrução2>
     <instrução3>
     ...
-else:
+else if (<condição>):
     <instrução4>
     <instrução5>
     <instrução6>
+else:
+    <instrução7>
+    <instrução8>
+    <instrução9>
     ...
 ```
 
