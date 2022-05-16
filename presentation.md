@@ -48,6 +48,8 @@ class: small-images, image-spaced
 - **Pycharm**: https://www.jetbrains.com/pycharm/
 - **Spyder/Anaconda**: https://www.anaconda.com/
 
+---
+class: center, middle
 ![](./ide.png)
 
 ---
