@@ -40,32 +40,53 @@ class: image-spaced
 ---
 class: small-images, image-spaced
 
-# Programação em Python
-![](./pic4.jpg)
+# Programar em Python
+- **Replit**: https://replit.com/
+- GDB: https://www.onlinegdb.com/
+- Python 3.10 (Shell): https://www.python.org/downloads/release/python-3100/
+- **VS Code**: https://code.visualstudio.com/
+- **Pycharm**: https://www.jetbrains.com/pycharm/
+- Spyder/Anaconda: https://www.anaconda.com/
+
+![](./ide.png)
 
 ---
-# Programação em Python
+# Programar em Python
 ## The Zen of Python
 - Beautiful is better than ugly
 - Explicit is better than implicit
 - Simple is better than complex
 - Complex is better than complicated
 - Readability counts
-- ...
+- ...(it goes on but you get the point)
 
 ---
 class: center, middle
-![](./pic3.gif)
-https://www.onlinegdb.com/online_python_compiler
+![](./cowabunga.jpg)
 
 ---
 
 # Hello World
-O programa "Hello World" é o típico primeiro programa que todos fazem numa nova linguagem de programação. Em Python, este programa destaca-se pela sua simplicidade:
+O programa "Hello World" é o típico primeiro programa que todos os iniciantes fazem numa qualquer nova linguagem de programação; em Python, este programa destaca-se pela sua simplicidade:
+
 ```python
-# Programa Hello World
-print("Hello World! :D")
+# O teu primeiro programa em Python! :)
+
+print("Hello World!")
 ```
+```cpp
+// Não tentem isto em casa
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout<<"Hello World";
+
+    return 0;
+}```
+
 
 ---
 class: center, middle, inverse
