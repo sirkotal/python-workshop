@@ -511,9 +511,9 @@ print(worlds[2])  # Obter terceiro elemento da lista
 print(worlds[-1]) # Obter último elemento da lista
 ```
 
-**.remove() Method**: Remove a primeira ocorrência do elemento passado como argumento numa lista.
-**del Keyword**: Permite eliminar um elemento de uma lista com base no seu index.
-**.pop() Method**: Permite eliminar um elemento de uma lista com base no seu index, retornando o valor.
+- **.remove() Method**: Remove a primeira ocorrência do elemento passado como argumento numa lista.
+- **del Keyword**: Permite eliminar um elemento de uma lista com base no seu index.
+- **.pop() Method**: Permite eliminar um elemento de uma lista com base no seu index, retornando o valor.
 
 ```python
 worlds = ["Coruscant", "Corellia", "Nar Shadaa", "Tatooine", "Raxus Prime", "Dathomir"]
@@ -525,8 +525,8 @@ print(capital)
 print(worlds)
 ```
 
-**.append() Method**: Permite adicionar um elemento ao final de uma lista
-**.insert() Method**: Permite inserir um elemento num index específico de uma lista
+- **.append() Method**: Permite adicionar um elemento ao final de uma lista
+- **.insert() Method**: Permite inserir um elemento num index específico de uma lista
 
 ```python
 consoles = ["VCS", "Genesis", "GameCube"]
@@ -538,7 +538,7 @@ print(consoles)
 ---
 # Operações com Listas
 
-**Slice Operator [m:n]**: Permite acesso a um segmento específico da lista, que começa em lista[m] e acaba em lista[n-1].
+- **Slice Operator [m:n]**: Permite acesso a um segmento específico da lista, que começa em lista[m] e acaba em lista[n-1].
 
 ```python
 consoles = ["VCS", "Genesis", "GameCube", "360", "PS4"]
@@ -547,7 +547,7 @@ print(consoles[2:])    # Obtém todos os elementos com index igual ou superior a
 print(consoles[:1])    # Obtém todos elementos com index inferior a 1
 ```
 
-**.reverse() Method**: Permite reverter a ordem de uma lista.
+- **.reverse() Method**: Permite reverter a ordem de uma lista.
 
 ```python
 fibonacci = [0, 1, 1, 2, 3, 5, 8]
