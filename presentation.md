@@ -263,15 +263,15 @@ class: center, middle, inverse
 # Estruturas Condicionais
 ## Operadores Lógicos
 
-- &gt; ("maior que")
-- < ("menor que")
-- == ("igual a")
-- != ("diferente de")
-- &gt;= ("maior ou igual que")
-- <= ("menor ou igual que")
-- and (logic AND - "e", operador booleano)
-- or (logic OR - "ou", operador booleano)
-- not (logic NOT - "não", operador booleano)
+- **&gt**; ("maior que")
+- **<** ("menor que")
+- **==** ("igual a")
+- **!=** ("diferente de")
+- **&gt;=** ("maior ou igual que")
+- **<=** ("menor ou igual que")
+- **and** (logic AND - "e", operador booleano)
+- **or** (logic OR - "ou", operador booleano)
+- **not** (logic NOT - "não", operador booleano)
 
 Estes operadores permitem-nos obter valores lógicos por si só (True ou False).
 
@@ -288,7 +288,7 @@ print(value)
 ---
 # Estruturas Condicionais
 
-No entanto, a principal utilidade dos operadores lógicos está em permitir a criação de estruturas condicionais, que permitem executar certas secções de código apenas se certas condições se verificarem, através do uso de **if statements**.
+No entanto, a principal utilidade dos operadores lógicos está em permitir a criação de estruturas condicionais, que permitem executar certas secções de código **apenas se certas condições se verificarem**, através do uso de **if statements**.
 
 Estas estruturas seguem o seguinte modelo (pseudo-código):
 ```
@@ -297,7 +297,7 @@ if (<condição>):
     <instrução2>
     <instrução3>
     ...
-else if (<condição>):
+elif (<condição>):
     <instrução4>
     <instrução5>
     <instrução6>
@@ -307,61 +307,79 @@ else:
     <instrução9>
     ...
 ```
+- **if**: Se a condição for verdadeira, executa o código ("body" do if).
+- **elif**: Significa "else if"; se a condição do *if* for falsa, testar a condição de *elif* e executar o código se esta for verdadeira.
+- **else**: Se nenhuma das condições anteriores se verifica (é verdadeira), executar este código.
+
+**IMPORTANTE**: Ao contrário de outras linguagens, a indentação (indentation) é muito importante em Python; falhas de indentação levam a erros no programa/código nesta linguagem.
 
 ---
 # Estruturas Condicionais
-## Exemplo 1: Verificação de Idade
+## Exemplo 1.1: Verificação de Idade
 ```python
 idade = 16
 
 if (idade < 18):
-    print("Menor de Idade!")
+    print("Menor de Idade")
 else:
     print("Maior de Idade")
 ```
 
----
-# Estruturas de Condição
-## Exemplo 2: Polícia em Ação
+## Exemplo 1.2: Verificação de Idade (ERRO - verificar indentação!)
 ```python
-esta_embriegado = False
-tem_carta = False
+idade = 16
 
-
-if (esta_embriegado or not tem_carta):
-    print("Criminoso!")
+if (idade < 18):
+print("Menor de Idade")
 else:
-    print("Está tudo bem c:")
+print("Maior de Idade")
+```
+
+---
+# Estruturas Condicionais
+## Exemplo 2: Batalha Simples
+```python
+player_level = 48
+boss_level = 50
+great_weapon = True
+
+
+if (player_level > boss_level and great_weapon):
+    print("Vitória!")
+elif (player_level > boss_level and (not great_weapon)):
+    print("Sobreviveste...por um triz")
+else:
+    print("Derrota")
 ```
 
 ---
 # Estruturas de Condição
-## Exemplo 3: Polícia em Ação - Multas!
+## Exemplo 3: Depois da Queima.py
 ```python
-esta_embriegado = False
-tem_carta = False
-multa = None    # Não tem qualquer valor atribuido, apesar de existir!
+drunk = False
+license = False
+ticket = None    # Se quisermos criar uma variável sem nenhum valor atribuído, podemos atribuir-lhe o valor None
 
-if (esta_embriegado and not tem_carta):
+if (drunk and not license):
     multa = 300
-elif (esta_embriegado and tem_carta):
+elif (drunk and license):
     multa = 200
-elif (not esta_embriegado and not tem_carta):
+elif (not drunk and not license):
     multa = 100
 else:
     multa = 0
 
-print("Multa:")
-print(multa)
+print("Multa:", multa)
 ```
 
 ---
 class: center, middle, inverse
-# Estruturas de Repetição
+# Estruturas de Repetição (for, while)
 
 ---
 # Estruturas de Repetição
-Estruturas de repetição permitem-nos executar certas secções de código multiplas vezes (sem ter que reescrever o código multiplas vezes).
+
+Estruturas de repetição permitem-nos executar certas secções de código múltiplas vezes (sem ter que reescrever o código várias vezes), através da criação de loops com um alcance definido (**for loops**) ou indefinido (**while loops**)
 
 ---
 # Estruturas de Repetição
