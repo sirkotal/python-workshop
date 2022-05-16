@@ -176,43 +176,21 @@ print (senate + " " + also_senate)
 ```
 
 ## Listas
-Listas representam contentores de dados e podem (e devem) ser utilizados para armazer conjuntos de dados de tamanho constante ou variável. Exemplos:
-- [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-- ["Moonlight Sonata", "Gymnopédie no. 1", "Piano Concerto no. 21", "Air on the G-String"]
 
----
+As listas representam "contentores" com capacidade de armazenar vários dados; são utilizadas para armazenar conjuntos de dados de qualquer tipo (mesmo de tipos diferentes) numa única "coleção" de tamanho variável (no sentido em que podemos alterar o seu tamanho, se assim o desejarmos!).
 
-# Variáveis
-```python
-# Números
-num = 125
-pi = 3.141592
-velocidade_luz = 3.0e8
+````python
+lista_1 = [1, 3.0, 45, -2, 89, 1456732]
 
-# Booleanos
-um_booleano = True
-outro_booleano = False
+lista_2 = ["a", "67", 23, "Elden Ring"]
 
-# Strings
-frase = "Ground control to Major Tom"
-outra_frase = "Parsley, Sage, Rosemary and Thyme"
+print(lista_1)
 
-# Listas
-numeros_primos = [2, 3, 5, 7]
-animaisDeEstimacao = ["Cão", "Gato", "Pássaro", "Urso Pardo"]
-
-print(num)
-print(pi)
-print(velocidade_luz)
-print(um_booleano)
-print(outro_booleano)
-print(frase)
-print(outra_frase)
-print(numeros_primos)
-print(animaisDeEstimacao)
+print(lista_2)
 ```
 
 ---
+
 class: center, middle, inverse
 # Operações Aritméticas
 
@@ -290,9 +268,9 @@ class: center, middle, inverse
 - != (diferente)
 - &gt;= (maior ou igual)
 - <= (menor ou igual)
-- and (operador booleano "E")
-- or (operador booleano "Ou")
-- not (operador booleano "Não")
+- and (logic AND - "e", operador booleano)
+- or (logic OR - "ou", operador booleano)
+- not (logic NOT - "não", operador booleano)
 
 ---
 # Estruturas de Condição
