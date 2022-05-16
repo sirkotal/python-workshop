@@ -15,13 +15,14 @@ class: inverse
 5. Operações Aritméticas
 6. Estruturas Oondicionais (if)
 7. Estruturas de Repetição (for, while)
-8. Funções
+8. Operações com Listas
 9. Operações com Strings
-10. Listas e Tuples
-11. Interação com o Utilizador
-12. Dicionários
-13. Debugging
-14. Bibliotecas e Reutilização de Código
+10. Interação com o Utilizador
+11. Funções
+12. Tuplos
+13. Dicionários
+14. Debugging
+15. Bibliotecas e Reutilização de Código
 
 ---
 class: image-spaced
@@ -494,39 +495,60 @@ class: center, middle, inverse
 
 ---
 # Operações com Listas
-Aceder ao elemento de uma lista:
+- **Index Operator []**: Permite o acesso a qualquer elemento de uma lista.
+
+**NOTA 1**: A primeira posição de qualquer lista é 0, ou seja, lista[0] representa o primeiro elemento de uma lista; por essa razão, o index máximo de uma lista será sempre o número de elementos menos 1.
+
+**NOTA 2**: Python permite o acesso a elementos de uma lista através de indexes negativos - lista[-1] representa o último elemento de uma lista, lista[-2] o penúltimo...
+
 ```python
-carbonara = ["bacon", "azeite", "massa", "ovos", "pimenta preta", "queijo"]
-print(carbonara[0]) # Obter primeiro elemento da lista
-print(carbonara[2]) # Obter terceiro elemento da lista
+worlds = ["Coruscant", "Corellia", "Nar Shadaa", "Tatooine", "Raxus Prime", "Dathomir"]
+
+worlds[5] = "Naboo"
+
+print(worlds[0])  # Obter primeiro elemento da lista
+print(worlds[2])  # Obter terceiro elemento da lista
+print(worlds[-1]) # Obter último elemento da lista
 ```
 
-Remover elemento de uma lista:
+**.remove() Method**: Remove a primeira ocorrência do elemento passado como argumento numa lista.
+**del Keyword**: Permite eliminar um elemento de uma lista com base no seu index.
+**.pop() Method**: Permite eliminar um elemento de uma lista com base no seu index, retornando o valor.
+
 ```python
-carbonara = ["bacon", "azeite", "massa", "ovos", "pimenta preta", "queijo"]
-del carbonara[0]    # Sem bacon :(
-print(carbonara)
+worlds = ["Coruscant", "Corellia", "Nar Shadaa", "Tatooine", "Raxus Prime", "Dathomir"]
+del worlds[2]
+worlds.remove("Corellia")
+capital = worlds.pop(0)
+
+print(capital)
+print(worlds)
 ```
 
-Adicionar um elemento a uma lista:
+**.append() Method**: Permite adicionar um elemento ao final de uma lista
+**.insert() Method**: Permite inserir um elemento num index específico de uma lista
+
 ```python
-carbonara = ["bacon", "azeite", "massa", "ovos", "pimenta preta", "queijo"]
-carbonara.append("cebola")
-carbonara.insert(2, "mais azeite")
-print(carbonara)
+consoles = ["VCS", "Genesis", "GameCube"]
+consoles.append("PS4")
+consoles.insert(3, "360")
+print(consoles)
 ```
 
 ---
 # Operações com Listas
 
-Obter uma sublista:
+**Slice Operator [m:n]**: Permite acesso a um segmento específico da lista, que começa em lista[m] e acaba em lista[n-1].
+
 ```python
-carbonara = ["bacon", "azeite", "massa", "ovos", "pimenta preta", "queijo"]
-print(carbonara[1:4])   # Obter sublista com elementos 1, 2 e 3 da lista original
-print(carbonara[2:])    # Obter todos os elementos do segundo para a frente
+consoles = ["VCS", "Genesis", "GameCube", "360", "PS4"]
+print(consoles[1:4])   # Obtém sublista com elementos de index 1, 2 e 3 da lista
+print(consoles[2:])    # Obtém todos os elementos com index igual ou superior a 2 
+print(consoles[:1])    # Obtém todos elementos com index inferior a 1
 ```
 
-Inverter uma lista:
+**.reverse() Method**: Permite reverter a ordem de uma lista.
+
 ```python
 fibonacci = [0, 1, 1, 2, 3, 5, 8]
 fibonacci.reverse()
