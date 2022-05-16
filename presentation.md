@@ -353,7 +353,7 @@ else:
 ```
 
 ---
-# Estruturas de Condição
+# Estruturas Condicionais
 ## Exemplo 3: Depois da Queima.py
 ```python
 drunk = False
@@ -361,15 +361,15 @@ license = False
 ticket = None    # Se quisermos criar uma variável sem nenhum valor atribuído, podemos atribuir-lhe o valor None
 
 if (drunk and not license):
-    multa = 300
+    ticket = 300
 elif (drunk and license):
-    multa = 200
+    ticket = 200
 elif (not drunk and not license):
-    multa = 100
+    ticket = 100
 else:
-    multa = 0
+    ticket = 0
 
-print("Multa:", multa)
+print("Multa:", ticket)
 ```
 
 ---
@@ -383,10 +383,10 @@ Estruturas de repetição permitem-nos executar certas secções de código múl
 
 ---
 # Estruturas de Repetição
-## O Ciclo While
-O Ciclo While permite executar um conjunto de instruções enquanto uma condição específica se verificar.
+## O ciclo While (while loop)
+Os ciclos While permitem executar um conjunto de instruções um número indefinido de vezes - enquanto uma condição específica se verificar, o código presente no body do loop vai correr.
 
-Esta estrutura segue o seguinte modelo:
+Os while loops são representados da seguinte forma (pseudo-código):
 ```python
 while (<condição>):
     <instrução1>
@@ -394,23 +394,34 @@ while (<condição>):
     <instrução3>
 ```
 
-**Exemplo:**
+**Exemplo: Contador**
 ```python
-numero = 0
+num = 0
 
-while (numero < 10):
-    numero = numero + 1
-    print(numero)
+while (num < 10):
+    num = num + 1
+    print(num)
+final = num
+print(final)
+```
+No entanto, não é estritamente necessário ter uma condição explícita para criar um while loop; podemos criar loops somente com condições booleanas (no entanto, é preciso utilizar statements específicos para terminar o loop; caso contrário, ele continuará a correr infinitamente, causando erros/crashes).
+
+```python
+num = 0
+while true:
+    num += 1
+    ...
 ```
 
 ---
 # Estruturas de Repetição
-## O Ciclo For
-O Ciclo For permite executar um conjunto de instruções um número específico de vezes.
+## O ciclo For (for loops)
 
-Esta estrutura segue o seguinte modelo:
+Ao invés dos ciclos While, os ciclos For permitem executar um conjunto de instruções um número específico de vezes.
+
+Os for loops são representados da seguinte forma (pseudo-código):
 ```python
-for <variável> in range(<numero>):
+for <variável> in <sequência>: # a sequência tanto pode ser uma range de números como uma coleção (uma lista, por exemplo)
     <instrução1>
     <instrução2>
     <instrução3>
@@ -421,43 +432,60 @@ for <variável> in range(<numero>):
 **Exemplo 1:**
 ```python
 # Imprimir no ecrã todos os números entre 0 e 9
-for numero in range(10):
-    print(numero)
+
+for num in range(10):
+    print(num)
 ```
 
 **Exemplo 2:**
 ```python
-# Imprimir no ecrã todos os números entre 5 e 10
-for numero in range(5, 11):
-    print(numero)
+# Imprimir no ecrã todos os números entre 2 e 10, de 2 em 2
+
+for num in range(5, 11, 2):
+    print(num)
 ```
 
 **Exemplo 3:**
 ```python
-# Imprimir no ecrã todas as frutas
-rock_stars = ["Freddy", "Roger", "Richard", "Brian", "David"]
-for person in rock_stars:
-    print(person)
+# Imprimir no ecrã todos os nomes
+
+slashers = ["Freddy", "Jason", "Michael", "Billy"]
+for killer in slashers:
+    print(killer)
 ```
+
+**NOTA**: Existe outra forma de aceder aos elementos de uma lista através de um for loop, através do index operator (que vamos ver mais tarde).
 
 ---
 # Estruturas de Repetição
-A instrução **continue** serve para saltar para a próxima iteração do ciclo:
+
+- **continue**: Permite fazer o loop saltar para a próxima iteração do ciclo, ignorando todo o código presente a seguir ao statement na iteração atual
+
 ```python
-# Imprimir no ecrã apenas os números pares
-for numero in range(10):
-    if (numero % 2 != 0):
-        continue
-    print(numero)
+for num in range(10):      # números ímpares
+    if (num % 2 == 0):  
+        continue           # se o número for par, saltamos para a próxima iteração e "ignoramos" o print()
+    print(num)
 ```
 
-A instrução **break** serve para sair do ciclo a meio da sua execução:
+- **break**: Permite sair do ciclo a meio da sua execução; especialmente útil para sair de loops que, caso contrário, seriam infinitos.
+
 ```python
 # Imprimir todos os números até encontrar um múltiplo de 7
 for numero in range(1,50):
     if (numero % 7 == 0):
         break
     print(numero)
+```
+```python
+num = 12          
+while True:             # Imprimir os restos da divisão de todos os números entre 12 e 19 por 10
+    remain = 0
+    if num == 20:
+        break
+    remain = num % 10 
+    num += 1
+    print(remain)
 ```
 
 ---
