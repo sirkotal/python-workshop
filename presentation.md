@@ -28,13 +28,14 @@ class: image-spaced
 
 # Programação - O que é?
 Linguagens de Alto Nível - Linguagens de Programação como Java, C++ ou Python que precisam de ser traduzidas para algo que o computador consiga executar.
+
 ![](./prog.jpeg)
 
 Linguagens Compiladas - Linguagem que, após compilada, gera machine code (código-máquina) - C++, C, C#...
 
 Linguagens Interpretadas - Linguagens em que o código, ao invés de ser compilado, é lido e executado por um programa - Python, JavaScript, BASIC...
 
-![](./int vs comp.png)
+![](./intcomp.png)
 
 ---
 class: small-images, image-spaced
