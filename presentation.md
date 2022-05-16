@@ -555,44 +555,61 @@ fibonacci.reverse()
 print(fibonacci)
 ```
 
-Ordenar uma lista:
+- **.sort() Method**: Permite ordenar uma lista; tem a mesma funcionalidade prática que a função sorted(), exceto o facto de apenas funcionar com listas.
+
 ```python
-lotaria = [41, 3, 1, 33, 42]
-lotaria.sort()
-print(lotaria)
+euler_nums = [1, 0, −1, 0, 5, 0, −61, 0, 1385, 0]
+euler_nums.sort()
+print(euler_nums)
 ```
 
 ---
 # Operações com Listas
 
-Tamanho de uma lista:
+Uma das ferramentas mais úteis à nossa disposição para realizar operações com listas é a **função len()**, que nos permite obter o tamanho de uma lista.
+
 ```python
-carbonara = ["bacon", "azeite", "massa", "ovos", "pimenta preta", "queijo"]
-numero_ingredientes = len(carbonara)
-print(numero_ingredientes)
+consoles = ["VCS", "Genesis", "GameCube", "360", "PS4"]
+console_number = len(consoles)
+print(console_number)
 ```
 
-Obter o mínimo e o máximo de uma lista:
+- **min() Function**: Retorna o menor elemento de uma lista.
+- **max() Function**: Retorna o maior elemento de uma lista.
+- 
 ```python
-lotaria = [41, 3, 1, 33, 42]
-minimo = min(lotaria)
-maximo = max(lotaria)
+euler_nums = [1, 0, −1, 0, 5, 0, −61, 0, 1385, 0]
+minimo = min(euler_nums)
+maximo = max(euler_nums)
+print(minimo)
+print(maximo)
+```
+
+**NOTA**: As funções min() e max() também funcionam com listas de strings (dão return do menor e maior nome, respetivamente, ordenado alfabeticamente)
+
+```python
+names = ["John", "Marcus", "Alex"]
+minimo = min(names)
+maximo = max(names)
 print(minimo)
 print(maximo)
 ```
 
 ---
 # Operações com Listas
-**Exemplo:** Soma de todos os elementos de uma lista
+**Exemplo:** Soma do dobro de todos os elementos de uma lista
+
 ```python
-lista_numeros = [1, 2, 3, 4]
+num_list = [65, 4, -70, 2.5]
 soma = 0
 
-for numero in lista_numeros:
-    soma = soma + numero
+for num in num_list:
+    soma += 2*num
     
 print(soma)
 ```
+
+**NOTA**: O operador += simplifica a operação - é o mesmo que ter ```python soma = soma + num```
 
 ---
 class: center, middle, inverse
@@ -663,6 +680,63 @@ numero_ocorrencias2 = frase.count("ana", 10)    # Ocorrências a partir do índi
 
 print(numero_ocorrencias)
 print(numero_ocorrencias2)
+```
+
+---
+class: center, middle, inverse
+# Interação com o Utilizador
+
+---
+# Interação com o Utilizador
+
+**Exemplo 1:** Perguntas simples ao utilizador
+
+```python
+nome = input("Insira o seu nome: ")
+idade = input("Insira a sua idade: ")
+
+print("Nome: " + nome)
+print("Idade: " + idade)
+```
+
+---
+# Interação com o Utilizador
+
+**Exemplo 2:** Tirar a carta!
+
+```python
+idade = input("Insira a sua idade: ")
+idade = int(idade)  # Converter para inteiro!!!
+
+if (idade < 16):
+    print("Não pode tirar a carta :(")
+if (idade >= 16):
+    print("Pode tirar a carta de motociclos")
+if (idade >= 18):
+    print("Pode tirar a carta de ligeiros")
+if (idade >= 21):
+    print("Pode tirar a carta de pesados")
+```
+
+---
+# Interação com o Utilizador
+
+**Exemplo 3:** Construir uma lista de 3 números pares:
+
+```python
+lista = []
+
+while (len(lista) < 3):
+    resposta = input("Insira um número: ")
+    numero = int(resposta)
+    
+    if (numero % 2 == 0):
+        lista.append(numero)
+    else:
+        print("Número introduzido não é par! Tente novamente.")
+        
+print("Lista introduzida: ")
+print(lista)
 ```
 
 ---
@@ -738,63 +812,6 @@ soma3 = soma_lista(lista3)
 print(soma1)
 print(soma2)
 print(soma3)
-```
-
----
-class: center, middle, inverse
-# Interação com o Utilizador
-
----
-# Interação com o Utilizador
-
-**Exemplo 1:** Perguntas simples ao utilizador
-
-```python
-nome = input("Insira o seu nome: ")
-idade = input("Insira a sua idade: ")
-
-print("Nome: " + nome)
-print("Idade: " + idade)
-```
-
----
-# Interação com o Utilizador
-
-**Exemplo 2:** Tirar a carta!
-
-```python
-idade = input("Insira a sua idade: ")
-idade = int(idade)  # Converter para inteiro!!!
-
-if (idade < 16):
-    print("Não pode tirar a carta :(")
-if (idade >= 16):
-    print("Pode tirar a carta de motociclos")
-if (idade >= 18):
-    print("Pode tirar a carta de ligeiros")
-if (idade >= 21):
-    print("Pode tirar a carta de pesados")
-```
-
----
-# Interação com o Utilizador
-
-**Exemplo 3:** Construir uma lista de 3 números pares:
-
-```python
-lista = []
-
-while (len(lista) < 3):
-    resposta = input("Insira um número: ")
-    numero = int(resposta)
-    
-    if (numero % 2 == 0):
-        lista.append(numero)
-    else:
-        print("Número introduzido não é par! Tente novamente.")
-        
-print("Lista introduzida: ")
-print(lista)
 ```
 
 ---
