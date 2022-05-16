@@ -126,7 +126,7 @@ Em Python, há essencialmente 6 tipos principais de variáveis (tipos de dados) 
 Números podem ser de naturezas distintas:
 - Números Inteiros - ints (e.g. 42)
 - Números Reais - floats (e.g. 2.81)
-- Números Reais representados em notação ciêntífica (e.g. 5.972e24, ou seja, 5.972 elevado a 24)
+- Números Reais representados em notação científica (e.g. 5.972e24, ou seja, 5.972 elevado a 24)
 - ...
 
 ```python
