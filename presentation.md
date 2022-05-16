@@ -609,7 +609,7 @@ for num in num_list:
 print(soma)
 ```
 
-**NOTA**: O operador += simplifica a operação - é o mesmo que ter ```python soma = soma + num```
+**NOTA**: O operador += simplifica a operação - é o mesmo que ter ```soma = soma + (2*num)```
 
 ---
 class: center, middle, inverse
@@ -618,31 +618,26 @@ class: center, middle, inverse
 ---
 # Operações com Strings
 
-Aceder ao elemento de uma string:
+Tal como nas listas, o **index operator []** permite-nos aceder a uma posição específica da string, mas com **uma diferença muito importante**: ao invés das listas não é possível alterar os elementos da string.
+
 ```python
-nome = "Pedro"
-print(nome[3])  # Obter terceira letra da String
-print(nome[-1]) # Obter última letra da String
+at = "FEUP"
+print(nome[2])  # Obtém a letra na posição 2 (terceira letra) da string
+print(nome[-1]) # Obtém a última letra da string
+
+at[3] = "C"     # ERRO!
 ```
 
-Tamanho de uma string:
+De modo semelhante às listas, a **função len()** retorna o tamanho de uma string.
+
 ```python
-autor = "Chbosky"
-tamanho = len(autor)
-print(tamanho)
+author = "Turing"
+size = len(author)
+print(size)
 ```
 
-Formatar uma string:
-```python
-frase = "hEllO wOrLD"
-print(frase.upper())  # TUDO EM MAIÚSCULAS!
-print(frase.lower())  # tudo em minúsculas.
-```
+Da mesma forma, o **slice operator [m:n]** permite-nos aceder a substrings da string principal
 
----
-# Operações com Strings
-
-Obter parte de uma string:
 ```python
 frase = "Onde está o Wallie?"
 nome = frase[12:18]
@@ -652,34 +647,52 @@ print(nome)
 print(verbo)
 ```
 
-Encontrar uma string dentro de outra string
-```python
-frase = "Onde está o Wallie?"
-indice_nome = frase.find("Wallie")      # Índice 12
-indice_vegetal = frase.find("batata")   # Não existe!!
 
-print(indice_nome)
-print(indice_vegetal)
+---
+# Operações com Strings
+
+- **upper() Method**: Retorna uma string com todos os caracteres maiúsculos.
+- **lower() Method**: Retorna uma string com todos os caracteres minúsculos.
+
+```python
+amon_gus = "Los Pollos Hermanos"
+print(among_gus.upper())  # MAIÚSCULAS
+print(among_gus.lower())  # minúsculas
+```
+
+- **.find() Method**: Permite encontrar uma string dentro de uma outra string original, retornando o index do valor especificado (retorna **-1** se não encontrar nada).
+
+**NOTA**: .find() tem praticamente a mesma função que .index(), com a exceção de este último levantar uma exceção quando não encontra a substring.
+
+```python
+sentence = "I am the one who knocks"
+substring_1 = sentence.find("one")          # Posição 9
+substring_2 = sentence.find("Heisenberg")   # Not here unfortunately ;(
+
+print(substring_1)
+print(substring_2)
 ```
 
 ---
 # Operações com Strings
 
-Substituir parte de uma string:
+- **.replace() Method**: Substitui todas as ocorrências (por default, mas pode ser alterado passando um terceiro argumento) de um caracter, palavra ou frase por outro caracter, palavra ou frase na string.
+
 ```python
-frase_presente = "Onde está o Wallie?"
-frase_passado = frase_presente.replace("está", "esteve") # Presente -> Passado
-print(frase_passado)
+sentence = "I am the one who knocks"
+chicken = sentence.replace("knocks", "eats")
+print(chicken)
 ```
 
-Contar o número de ocorrências de uma string dentro de outra string:
-```python
-frase = "A ana comeu o pudim da mariana"
-numero_ocorrencias = frase.count("ana")
-numero_ocorrencias2 = frase.count("ana", 10)    # Ocorrências a partir do índice 10
+- **.count() Method**: Retorna o número de ocorrências de um determinado valor dentro da string.
 
-print(numero_ocorrencias)
-print(numero_ocorrencias2)
+```python
+sentence = "It's over Anakin, I have the high ground!"
+count_1 = sentence.count("h")
+count_2 = sentence.count("n", 12)    # ocorrências a partir do index 10
+
+print(count_1)
+print(count_2)
 ```
 
 ---
