@@ -13,22 +13,28 @@ class: inverse
 3. Hello World
 4. Variáveis
 5. Operações Aritméticas
-6. Estruturas de Condição
-7. Estruturas de Repetição
-8. Operações com Listas
+6. Estruturas de Condição (if)
+7. Estruturas de Repetição (for, while)
+8. Funções
 9. Operações com Strings
-10. Funções
+10. Listas e Tuples
 11. Interação com o Utilizador
-12. Tuplos
-13. Dicionários
+12. Dicionários
+13. Debugging
 14. Bibliotecas e Reutilização de Código
 
 ---
 class: image-spaced
 
-# Introdução à Programação
+# Programação - O que é?
 Linguagens de Alto Nível - Linguagens de Programação como Java, C++ ou Python que precisam de ser traduzidas para algo que o computador consiga executar.
-![](./pic2.png)
+![](./prog.jpeg)
+
+Linguagens Compiladas - Linguagem que, após compilada, gera machine code (código-máquina) - C++, C, C#...
+
+Linguagens Interpretadas - Linguagens em que o código, ao invés de ser compilado, é lido e executado por um programa - Python, JavaScript, BASIC...
+
+![](./int vs comp.png)
 
 ---
 class: small-images, image-spaced
