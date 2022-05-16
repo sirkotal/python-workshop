@@ -50,7 +50,7 @@ class: small-images, image-spaced
 
 ---
 class: center, middle
-![](./ide.png)
+![](./ide.jpg)
 
 ---
 # Programar em Python
