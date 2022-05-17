@@ -691,7 +691,7 @@ print(chicken)
 ```python
 sentence = "It's over Anakin, I have the high ground!"
 count_1 = sentence.count("h")
-count_2 = sentence.count("n", 12)    # ocorrências a partir do index 10
+count_2 = sentence.count("n", 12)    # ocorrências a partir do index 12
 
 print(count_1)
 print(count_2)
@@ -704,55 +704,66 @@ class: center, middle, inverse
 ---
 # Interação com o Utilizador
 
-**Exemplo 1:** Perguntas simples ao utilizador
+Em Python, a **função input()** permite-nos obter input (informação/dados) diretamente do utilizador e guardá-lo numa variável!
+
+![](./input.png)
+
+**Exemplo 1:** Pergunta Simples
 
 ```python
-nome = input("Insira o seu nome: ")
-idade = input("Insira a sua idade: ")
+name = input("Insira o seu nome: ")
+age = input("Insira a sua idade: ")
 
-print("Nome: " + nome)
-print("Idade: " + idade)
+print("Nome: " + name)
+print("Idade: " + age)
 ```
 
 ---
 # Interação com o Utilizador
+
+Podemos utilizar o **int() Method** para converter imediatamente o input de idade do utilizador num número inteiro, o que facilita eventuais operações com o número.
 
 **Exemplo 2:** Tirar a carta!
 
 ```python
-idade = input("Insira a sua idade: ")
-idade = int(idade)  # Converter para inteiro!!!
+age = input("Insira a sua idade: ")
+age = int(idade)  
 
-if (idade < 16):
-    print("Não pode tirar a carta :(")
-if (idade >= 16):
-    print("Pode tirar a carta de motociclos")
-if (idade >= 18):
-    print("Pode tirar a carta de ligeiros")
-if (idade >= 21):
-    print("Pode tirar a carta de pesados")
+height = int(input("Insira a sua altura em cm:"))    # em termos práticos, este modo de obter input em inteiros é igual ao modo de cima, com a exceção de necessitar                                                          de menos linhas de código para o conseguir 
+
+
+if (age >= 18):
+    print("Bebe o que quiseres!")
+if (age < 18):
+    print("Fica-te pelo Champomy ;)")    
+
+if (height >= 250):
+    print("Damn, he ballin' for sure")
+if (age < 250):
+    print("Fraco, muito fraco gente")
 ```
 
 ---
 # Interação com o Utilizador
 
-**Exemplo 3:** Construir uma lista de 3 números pares:
+**Exemplo 3:** Construir uma lista de 3 números ímpares, maiores que 10:
 
 ```python
 lista = []
 
 while (len(lista) < 3):
-    resposta = input("Insira um número: ")
-    numero = int(resposta)
+    num = int(input("Insira um número: "))
     
-    if (numero % 2 == 0):
-        lista.append(numero)
+    if (num % 2 != 0 and num > 10):
+        lista.append(num)
     else:
-        print("Número introduzido não é par! Tente novamente.")
+        print("Número inválido! Tente novamente.")
         
 print("Lista introduzida: ")
 print(lista)
 ```
+
+Os exemplos dados em cima são apenas implementações mais simples do uso de input do utilizador; se quiserem ver uma utilização mais complexa para input(), podem transferir o ficheiro text_based_game.py ou copiar o código do ficheiro para o vosso IDE e experimentar o jogo (utiliza também funções, que vamos ver de seguida)!
 
 ---
 class: center, middle, inverse
@@ -760,19 +771,25 @@ class: center, middle, inverse
 
 ---
 # Funções
-Funções são a forma de reutilizarmos código! 
 
-Elas funcionam tal e qual como uma função matemática.
+Funções em programação não são mais do que formas de simplificar, segmentar e otimizar o nosso código/programa: permitem-nos não só tornar o nosso código mais claro/legível, mas também reutilizar código (removendo a necessidade de reescrever algo várias vezes) e até decompor problemas complexos em partes mais simples!
 
-Um exemplo - Função matemática f(x,y) = 4x + 2y²
+Apesar de parecerem assustadoras no início, funcionam exatamente (bem, **quase exatamente**) como se de uma função matemática se tratasse!
+
+![](./func1.png)
+
+**Exemplo:** Função Matemática f(x,y) = 4x + 2y²
+
 ```python
-# Definição da função
-def funcao(x, y):
-    return 4*x + 2*y*y
+# Como definir uma função?
 
-# Utilização da função
-valor1 = funcao(2, 1)
-valor2 = funcao(5, 0)
+def func(x, y):                 # header of the function (name of the function and parameters)
+    return 4*x + 2*(y*y)        # body of the function (statements)
+
+# Como utilizar uma função?
+
+valor1 = func(2, 1)
+valor2 = func(5, -2)
 print(valor1)
 print(valor2)
 ```
@@ -780,53 +797,84 @@ print(valor2)
 
 ---
 # Funções
-Funções são também a forma de reutilizarmos código! 
 
-A seguinte secção de código calcula a soma de 4 listas diferentes:
+Tal como referido em cima, as funções permitem-nos reutilizar código, de modo a facilitar o trabalho do programador e otimizar o programa!
+
+O seguinte programa calcula a soma das somas internas de 3 listas:
+
 ```python
-lista1 = [1, 2, 3, 4]
-lista2 = [2, 2, 2, 2, 2, 2]
-lista3 = [0, 0, 1, 0, 1]
+list1 = [1, 2, 3, 4]
+list2 = [-2, 4, -5, 6, -7, 1]
+list3 = [0, 0, 1, 0, 1]
 
-soma = 0
-for numero in lista1:
-    soma = soma + numero
-print(soma)
+soma_1 = 0
+for num in list1:
+    soma_1 += num
+print(soma_1)
 
-soma = 0
-for numero in lista2:
-    soma = soma + numero
-print(soma)
+soma_2 = 0
+for num in list2:
+    soma_2 += num
+print(soma_2)
 
-soma = 0
-for numero in lista3:
-    soma = soma + numero
-print(soma)
+soma_3 = 0
+for num in list3:
+    soma_3 += num
+print(soma_3)
+
+print(soma_1 + soma_2 + soma_3)
 ```
 
-**Problema**: Código repetido três vezes - uma vez para cada lista 
+O código acima é desnecessariamente extenso, pouco otimizado e, francamente, não é muito legível. Haverá uma solução para isto?
+
+- **return Statement**: Permite a uma função retornar um valor.
 
 ---
 # Funções
-**Solução**: Definir uma função para somar uma lista!
+
+**Solução**: Definir uma função para fazer o trabalho por nós!
+
 ```python
-def soma_lista(lista):  # A função recebe um ARGUMENTO: a lista a somar
+def soma_list_sum(lst):  # A função recebe 1 ARGUMENTO: a lista a somar
     soma = 0
-    for numero in lista:
-        soma = soma + numero
+    for num in lst:
+        soma += num
     return soma         # O valor que a função que retorna
 
-lista1 = [1, 2, 3, 4]
-lista2 = [2, 2, 2, 2, 2, 2]
-lista3 = [0, 0, 1, 0, 1]
+list1 = [1, 2, 3, 4]
+list2 = [-2, 4, -5, 6, -7, 1]
+list3 = [0, 0, 1, 0, 1]
 
-soma1 = soma_lista(lista1)
-soma2 = soma_lista(lista2)
-soma3 = soma_lista(lista3)
+soma_1 = soma_list_sum(list1)
+soma_2 = soma_list_sum(list2)
+soma_3 = soma_list_sum(list3)
 
-print(soma1)
-print(soma2)
-print(soma3)
+print(soma_1)
+print(soma_2)
+print(soma_3)
+print(soma_1 + soma_2 + soma_3)
+
+```
+
+**NOTA**: Claro que era possível usar a **função built-in sum()** para obter diretamente a soma interna de cada lista (se fizeram isso, não é necessariamente mau - **às vezes, quanto mais preguiçoso o programador, melhor programador é**, pois arranja soluções menos trabalhosas para os problemas!). De qualquer das formas, esta não seria a única forma de fazer uma função com este propósito; poderiam, por exemplo, ter criado uma função que aceitasse logo as 3 listas como argumentos!
+
+É também possível chamar uma função dentro de outra função, o que nos oferece inúmeras possibilidades diferentes para obter um mesmo resultado!
+
+![](./func2.png)
+
+**Exemplo**: Pegando no código original da função f(x,y) = 4x + 2y²
+
+```python
+def square(x):
+    return x*x
+
+def func(x, y):                 
+    return 4*x + 2*(square(y))
+    
+valor1 = func(2, 1)
+valor2 = func(5, -2)
+print(valor1)
+print(valor2)
 ```
 
 ---
