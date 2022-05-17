@@ -74,7 +74,7 @@ def option_run():
   choice = str(input())
 
   if choice in answer_A:
-    print("	You're easily spotted. You died!")
+    print("You're easily spotted. You died!")
   elif choice in answer_B:
     print("You're no match for an orc. You died!")
   elif choice in answer_C:
