@@ -22,7 +22,7 @@ class: inverse
 12. Tuplos
 13. Dicionários
 14. Debugging
-15. Bibliotecas e Reutilização de Código
+15. Bibliotecas (Reutilização de Código)
 
 ---
 class: image-spaced
@@ -191,6 +191,29 @@ print(lista_2)
 ```
 
 ---
+
+**NOTA**: As listas são coleções mutáveis, pelo que podem ser gerados **aliases**: uma lista tem dois nomes/duas variáveis diferentes, logo alterações numa refletem-se na outra e vice-versa (podemos o usar o **.copy() Method** para evitar isto).
+
+**Exemplo:**
+
+```python
+a = [1,2,3]
+
+b = [1,2,3]
+
+print(b is a)  # FALSO, pois não são a mesma coisa (lista)
+
+c = a
+
+d = a.copy()
+
+print(c is a)  # VERDADEIRO
+print(d is a)  # FALSO
+
+a[1] = 4
+print(c)       # c = a = [1,4,3]
+print(d)       # d = [1,2,3]
+```
 
 class: center, middle, inverse
 # Operações Aritméticas
@@ -883,26 +906,42 @@ class: center, middle, inverse
 
 ---
 # Tuplos
-Tuplos são muito semelhantes a listas, embora sejam uma estrutura de dados **imutável**, isto é, assim que são criados **não podem ser alterados**.
+
+Tuplos são coleções muito semelhantes a listas, embora com uma diferenção: são estruturas de dados **imutáveis**, isto é, assim que são criados **não podem ser alterados** de qualquer forma; são definidos através de parêntesis curvos e partilham muitos methods com listas.
 
 ```python
-linguagens = ("c++", "python", "java", "php", "golang") # Parentesis curvos!
-numero_linguagens = len(linguagens)
 
-print("Este é um workshop de " + linguagens[1])
+tup = ("C++", "Python", "Java", "PHP", "Dart") 
+numero_linguagens = len(tup)
+
+print("Este é um workshop de " + tup[1])
 print(numero_linguagens)
 
-print("Um sub-tupulo:")
-print(linguagens[1:3])
+print("Outras linguagens:", tup[2:5])
 ```
 
-Como os tuplos são **imutáveis**, as seguintes instruções iriam originar um erro!
+Como os tuplos são **imutáveis**, as seguintes instruções originam erros!
+
 ```python
-linguagens = ("c++", "python", "java", "php", "golang")
-del linguagens[1]               # Impossível remover!
-linguagens[3] = "javascript"    # Impossível alterar!
+tup = ("C++", "Python", "Java", "PHP", "Dart") 
+del tup[1]               # Impossível remover elementos do tuplo
+tup[2] = "JavaScript"    # Impossível alterar elementos do tuplo
 ```
 
+Apesar destas limitações, existem maneiras de as contornar e "alterar", de certa forma, um tuplo!
+
+**Exemplo**:
+
+```python
+tup = ("C++", "Python", "Java", "PHP", "Dart") 
+lst = list(tup)                                  # cria uma variável lst com o equivalente em lista do tuplo
+
+lst[1] = "Cython"                                # alteramos o conteúdo da posição 1 da lista
+
+tup = tuple(lst)                                 # transformar a lista em tuplo e atribuir-lhe a variável tup
+
+print(tup)                                       # et voilà, tuplo alterado...mais ou menos, pois na verdade estamos a dar assign a tup de um tuplo novo,                                                                diferente do original
+```
 
 ---
 class: center, middle, inverse
@@ -910,86 +949,161 @@ class: center, middle, inverse
 
 ---
 # Dicionários
-Dicionários são idênticos a listas, mas em vez de serem indexados por números naturais consecutivos, podem ser indexados por qualquer tipo de variável!
 
-Funcionam, de certa forma, como uma tabela:
+Dicionários são idênticos a listas, mas em vez de serem indexados somente por números, podem ser indexados por qualquer tipo de variável (strings, números...)!
+
+Funcionam, de certa forma, como uma tabela!
+
+Cada entrada de um dicionário designa-se por um par **Chave: Valor** (**Key: Value**). No exemplo abaixo, as **chaves** seriam os nomes e os **valores** seriam os números.
 
 ```python
-matriculas = {"Paulo": "44-XX-77", "Mariana": "14-MH-19"}
-print(matriculas["Paulo"])
-print(matriculas["Mariana"])
-print(matriculas["Ze"])     # Origina um erro porque esta 
-                            # entrada não existe no dicionário!
+reviews = {"Elden Ring": 10, "DOOM": 9, "Hunt Down The Freeman": 0}
+
+print(reviews["Elden Ring"])
+print(reviews["Hunt Down The Freeman"])
+print(reviews["Left 4 Dead 3"])     # Origina um erro porque esta entrada não existe (infelizmente... :( )
 ```
 
-Cada entrada de um dicionário designa-se por um par "**Chave: Valor**". No exemplo acima, as **chaves** seriam os nomes e os **valores** seriam os números de telefone / telemóvel.
+**NOTA**: As chaves permitem aceder aos valores, mas o contrário não se verifica, tal que ```reviews[10]``` por exemplo daria um erro - não existe nenhuma key com valor 10.
 
 ---
 # Dicionários
-Muitas funções anteriormente estudadas aplicam-se também a dicionários!
+
+Tal como nos tuplos, muitas funções vistas anteriormente funcionam também com os dicionários!
 
 ```python
-paginas_amarelas = {"Paulo": 224127304, "Ana": 913845822, "Pedro": 933744912}
+reviews = {"Elden Ring": 10, "DOOM": 9, "Hunt Down The Freeman": 0}
 
-# Obter número de entradas nas páginas amarelas
-print(len(paginas_amarelas))
+print(len(reviews))                             # Obter número de entradas no dicionário
 
-# Remover um contacto
-del paginas_amarelas["Pedro"]
+del reviews["Hunt Down The Freeman"]            # I wish... :(
 
-# Alterar um contacto
-paginas_amarelas["Ana"] = 123456789
+reviews["Elden Ring"] = 9000                    # Alterar um valor
 
-print(paginas_amarelas)
+print(reviews)
 ```
 
 ---
 # Dicionários
-Outras funções são exclusivas aos dicionários:
+
+No entanto, os dicionários possuem alguns métodos exclusivos.
+
+- **.keys() Method**: Retorna um objeto com as chaves de um dicionário
+- **.values() Method**: Retorna um objeto com os valores de um dicionário
+- **.items() Method**: Retorna um objeto com os pares **chave: valor** em tuplos
+
+**NOTA**: No caso destes três métodos, para podermos visualizar o conteúdo numa lista, por exemplo, devemos usar a função list() na variável (pois na verdade os métodos só retornam uma "view" do conteúdo)
+
+- **in/not in**: Permitem testar se uma chave faz parte de um dicionário (não funciona com valores).
+- **.get() Method**: Retorna o valor de uma chave específica (ou o valor a ser returnado caso a chave não seja encontrado, que por default é None); evitando assim **runtime errors**.
+
+**NOTA**: Tal como as listas, os dicionários são objetos mutáveis sujeitos a **"aliasing"** - 2 variáveis referem-se ao mesmo objeto; por isso, podemos usar o **.copy() Method** para criar uma cópia do dicionário original que não seja alterada por modificações neste último.
 
 ```python
-paginas_amarelas = {"Paulo": 224127304, "Ana": 913845822, "Pedro": 933744912}
+reviews = {"Elden Ring": 10, "DOOM": 9, "Hunt Down The Freeman": 0}
 
-# Criar uma "lista" com todos os nomes (chaves)
-nomes = paginas_amarelas.keys()
+games = reviews.keys()        # Objeto com todos as chaves
 
-# Criar uma "lista" com todos os números (valores)
-numeros = paginas_amarelas.values()
+vals = reviews.values()       # Objeto com todos os valores
 
-# Verificar se elemento se encontra no dicionário
-if ("Paulo" in paginas_amarelas):
-    print("Contacto do Paulo encontrado!")
-    print(paginas_amarelas["Paulo"])
+pairs = reviews.items()       # Objeto com todos os pares chave: valor
+
+print(list(pairs))            # Dá print a uma lista com os pares chave: valor
+
+if ("Left 4 Dead 3" in reviews):        # Verificar se um elemento se encontra no dicionário
+    print("OBRIGADO VALVE!")
+    print(reviews["Left 4 Dead 3"])
 else:
-    print("Não foi encontrado o número do Paulo")
+    print("A tristeza mantém-se.")
+    print(reviews.get("Left 4 Dead 3"))
+    
+og_reviews = reviews.copy()             # Cria e preserva uma cópia do dicionário original; a cópia não se altera
+
+reviews["DOOM"] = 8
+
+print(reviews)
+print(og_reviews)
 ```
 
 ---
 class: center, middle, inverse
-# Bibliotecas e Reutilização de Código
+# Debugging
 
 ---
-# Bibliotecas e Reutilização de Código
-Há muitos developers de python espalhados por todo o mundo, todos a desenvolver milhares de funções diariamente.
+# Debugging
 
-A melhor forma de desenvolver código rapidamente e colaborativamente com outras pessoas é **reutilizando** código desenvolvido por outros.
+Uma das coisas mais importantes a aprender para se tornarem bons programadores é **debugging** - o processo de encontrar e remover erros do vosso código. Existem várias ferramentas que vos facilitam este trabalho, desde debuggers incluídos em IDEs como Pycharm ou VS Code, até ao próprio terminal que, muitas vezes, vos dá a linha em que o vosso código está a errar (**Traceback**).
 
-Esse código encontra-se dentro de **Bibliotecas**, que são um ficheiro (ou conjuntos de ficheiros) com diversas funções (e outras coisas!).
+No entanto, o vosso código pode conter erros mais subtis como, por exemplo, uma operação que não está a calcular um resultado da maneira que vocês desejam. É aqui que entra uma das ferramentas mais poderosas (e simples) para debugging ao vosso dispôr: **print()**.
 
-Python é famoso pelo seu "*lado científico*" fácil de programar.
+![](./python.png)
 
-Para importar uma biblioteca, utiliza-se a instrução **import**:
+**Exemplo 1:**
+
+```python
+mylist = [1, 2, 3]
+print(mylist[10])      # a lista só possui 3 elementos, logo não é possível aceder à posição 10 - ERRO
+```
+
+---
+# Debugging
+
+**Exemplo 2:**
+
+```python
+b = 'a'+3
+print(b)              # não podemos somar uma string com um int! - ERRO
+```
+
+**Exemplo 3:** Agora testem vocês, utilizando print(), o porquê de este código não produzir output.
+
+```python
+num = 45674 
+reverse = 0
+while num >= 0:
+  rem = num % 10 
+  reverse = (reverse * 10) + rem 
+  num //= 10
+print(reverse)
+```
+
+Fazendo **print(num)**, rapidamente percebemos que estamos a receber um número infinito de zeros; isto porque ```num``` nunca vai ser menor que 0, logo a condição será sempre True. Por isso, fazendo a seguinte alteração, o código fica funcional!
+
+```python
+num = 45674 
+reverse = 0
+while num > 0:     # HERE!!
+  rem = num % 10 
+  reverse = (reverse * 10) + rem 
+  num //= 10
+print(reverse)
+```
+ 
+---
+class: center, middle, inverse
+# Bibliotecas (Reutilização de Código)
+
+---
+# Bibliotecas (Reutilização de Código)
+
+Existem muitos developers de Python espalhados pelo mundo inteiro, todos a desenvolver milhares de funções diariamente!!
+
+Assim sendo, a melhor forma de desenvolver código rápida e colaborativamente com outras pessoas é **reutilizando** o código desenvolvido por outros.
+
+Esse código encontra-se dentro de **Bibliotecas** (**Libraries***), que são um ficheiro (ou conjuntos de ficheiros) com diversas funções, métodos, classes...
+
+Para importar uma biblioteca, utiliza-se a instrução **import** (pseudo-código):
 
 ```python
 import <nome_da_biblioteca>
 ```
 
 ---
-# Bibliotecas e Reutilização de Código
-**Exemplo 1:** Programa para fazer um gráfico que traça a variação da posição em função do tempo:
+# Bibliotecas (Reutilização de Código)
+**Exemplo 1:** Python é muito utilizado em **Data Science**; o primeiro exemplo é um programa para fazer um gráfico que traça a variação da posição em função do tempo.
 
 ```python
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt    
 
 time = [0, 1, 2, 3]
 position = [0, 100, 200, 300]
@@ -1000,13 +1114,14 @@ plt.ylabel('Position (km)')
 
 ---
 class: medium-images
-# Bibliotecas e Reutilização de Código
+# Bibliotecas (Reutilização de Código)
 **Exemplo 1:** Resultado
 ![](./pic6.jpg)
 
 ---
-# Bibliotecas e Reutilização de Código
-**Exemplo 2:** Programa para fazer um gráfico da utilização das linguages de programação:
+# Bibliotecas (Reutilização de Código)
+**Exemplo 2:** Programa para fazer um gráfico da utilização das linguagens de programação.
+
 ```python
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
@@ -1026,9 +1141,52 @@ plt.show()
 
 ---
 class: medium-images
-# Bibliotecas e Reutilização de Código
+# Bibliotecas (Reutilização de Código)
 **Exemplo 2:** Resultado
 ![](./pic7.jpg)
+
+---
+# Bibliotecas (Reutilização de Código)
+**Exemplo 3:** Programa que calcula o determinante de uma matriz
+
+```python
+from scipy import linalg
+import numpy as np
+two_d_array = np.array([ [4,5], [3,2] ])     # definir a matriz quadrada
+res = linalg.det(two_d_array)                      # passar valores à função det()
+
+print(res)
+```
+---
+# Bibliotecas (Reutilização de Código)
+**Exemplo 3:** Resultado = **-7.0**
+
+---
+
+# Bibliotecas (Reutilização de Código)
+**Exemplo 4:** Programa que gera uma imagem:
+
+```python
+from turtle import *
+color('red', 'yellow')
+begin_fill()
+while True:
+    forward(200)
+    left(170)
+    if abs(pos()) < 1:
+        break
+end_fill()
+done()
+```
+---
+# Bibliotecas (Reutilização de Código)
+**Exemplo 4:** Resultado
+![](./turtle-star.png)
+
+---
+# Bibliotecas (Reutilização de Código)
+
+Adicionalmente, podem transferir o ficheiro simple_game.py (ou copiar o seu código para o vosso IDE) para verem um jogo muito básico criado com Pygame - uma biblioteca específica para a criação de jogos!
 
 ---
 class: center, middle, inverse
@@ -1037,49 +1195,65 @@ class: center, middle, inverse
 ---
 # Bónus: Exercícios
 ## Exercício 1
-Desenvolve um programa que, dado um número inserido pelo utilizador, o caraterize como ímpar ou par.
+Desenvolve um programa que, dado um número inserido pelo utilizador, o retorne True se for primo ou False se não o for
 
 ---
 # Bónus: Exercícios
 ## Exercício 1 - Solução
 ```python
-resposta = input("Insira um número: ")
-numero = int(resposta)
+num = int(input())
 
-if (numero % 2 == 0):   
-    print("O número é par.")
-else:                   
-    print("O número é ímpar.")
+is_prime = num > 1
+
+for x in range(2,num):
+  if num % x == 0:
+    is_prime = False
+    break
+print(is_prime)
 ```
 
 ---
 # Bónus: Exercícios
 ## Exercício 2
-Desenvolve um programa que pede ao utilizador que insira 5 números e que calcule a sua média.
+Desenvolve um programa que conte o número de strings na lista ```words = ['ab', 'xyghz', 'a', '1221']``` com comprimento (length) maior ou igual a 2!
 
 ---
 # Bónus: Exercícios
 ## Exercício 2 - Solução
 ```python
-# Função para obter números introduzidos pelo utilizador
-def obterNumeros():
-    numeros = []
-    for i in range(5):
-        resposta = input("Insira um número: ")
-        numeros.append(int(resposta))
-    return numeros
+words = ['ab', 'xyghz', 'a', '1221']
+counter = 0
 
-# Função para obter a média de uma lista de números
-def obterMedia(numeros):
-    soma = 0
-    for numero in numeros:
-        soma = soma + numero
-    return (soma/len(numeros))
-    
+for word in words:
+    if len(word) >= 2:
+        counter += 1
 
-numeros = obterNumeros()
-media = obterMedia(numeros)
-print(media)
+print(counter)
+```
+
+---
+# Bónus: Exercícios
+## Exercício 3
+Desenvolve uma função que recebe 3 valores (números inteiros) e retorna o maior valor possível de se formar com esses 3 números (HINT: usa uma lista para guardar os números!!)
+
+---
+# Bónus: Exercícios
+## Exercício 3 - Solução
+```python
+def adigits(a,b,c):
+  list = [a,b,c]
+  
+  result = 0
+  
+  result += max(list)*100      
+  list.remove(max(list))
+  
+  result += max(list)*10
+  list.remove(max(list))
+  
+  result+= max(list)
+  
+  return result
 ```
 
 ---
