@@ -786,7 +786,7 @@ print("Lista introduzida: ")
 print(lista)
 ```
 
-Os exemplos dados em cima são apenas implementações mais simples do uso de input do utilizador; se quiserem ver uma utilização mais complexa para input(), podem transferir o ficheiro text_based_game.py ou copiar o código do ficheiro para o vosso IDE e experimentar o jogo (utiliza também funções, que vamos ver de seguida)!
+Os exemplos dados em cima são apenas implementações mais simples do uso de input do utilizador; se quiserem ver uma utilização mais complexa para input(), podem transferir o ficheiro **text_based_game.py** ou copiar o código do ficheiro para o vosso IDE e experimentar o jogo (utiliza também funções, que vamos ver de seguida)!
 
 ---
 class: center, middle, inverse
@@ -1034,7 +1034,7 @@ class: center, middle, inverse
 
 Uma das coisas mais importantes a aprender para se tornarem bons programadores é **debugging** - o processo de encontrar e remover erros do vosso código. Existem várias ferramentas que vos facilitam este trabalho, desde debuggers incluídos em IDEs como Pycharm ou VS Code, até ao próprio terminal que, muitas vezes, vos dá a linha em que o vosso código está a errar (**Traceback**).
 
-No entanto, o vosso código pode conter erros mais subtis como, por exemplo, uma operação que não está a calcular um resultado da maneira que vocês desejam. É aqui que entra uma das ferramentas mais poderosas (e simples) para debugging ao vosso dispôr: **print()**.
+No entanto, o vosso código pode conter erros mais subtis como, por exemplo, uma operação que não está a calcular um resultado da maneira que vocês desejam. É aqui que entra em cena uma das ferramentas mais poderosas (e simples) para debugging ao vosso dispor: **print()**.
 
 ![](./python.png)
 
@@ -1186,7 +1186,7 @@ done()
 ---
 # Bibliotecas (Reutilização de Código)
 
-Adicionalmente, podem transferir o ficheiro simple_game.py (ou copiar o seu código para o vosso IDE) para verem um jogo muito básico criado com Pygame - uma biblioteca específica para a criação de jogos!
+Adicionalmente, podem transferir o ficheiro **simple_game.py** (ou copiar o seu código para o vosso IDE) para verem um jogo muito básico criado com Pygame - uma biblioteca específica para a criação de jogos!
 
 ---
 class: center, middle, inverse
