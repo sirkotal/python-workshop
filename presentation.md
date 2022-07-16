@@ -599,7 +599,6 @@ print(console_number)
 
 - **min() Function**: Retorna o menor elemento de uma lista.
 - **max() Function**: Retorna o maior elemento de uma lista.
-- 
 ```python
 euler_nums = [1, 0, −1, 0, 5, 0, −61, 0, 1385, 0]
 minimo = min(euler_nums)
