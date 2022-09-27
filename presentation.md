@@ -287,7 +287,7 @@ class: center, middle, inverse
 # Estruturas Condicionais
 ## Operadores Lógicos
 
-- **>**; ("maior que")
+- **>** ("maior que")
 - **<** ("menor que")
 - **==** ("igual a")
 - **!=** ("diferente de")
