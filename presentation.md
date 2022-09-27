@@ -114,14 +114,14 @@ Uma variável funciona como se fosse um "contentor", onde podemos armazenar dado
 Em Python, há essencialmente 6 tipos principais de variáveis (tipos de dados) nativos da linguagem (isto é, sem ser necessário utilizar extensões adicionais):
 - Números (ints e floats)
 - Booleanos (Verdadeiro ou Falso)
-- Strings (cadeias de caratéres)
+- Strings (cadeias de caracteres)
 - Listas 
 - Tuplos <--
 - Dicionários <--
 
 (Estes dois últimos tipos de dados são mais complexos e serão abordados no final do workshop.)
 
-**NOTA**: Ao contrário de outras linguagens (como C++), é perfeitamente possível alterar uma variável int para uma variável do tipo string em Python, pois não é necessário atribuir nenhum tipo específico às variáveis.
+**NOTA**: Ao contrário de outras linguagens (como C++), é perfeitamente possível alterar uma variável int (número) para uma variável do tipo string em Python, pois não é necessário atribuir nenhum tipo específico às variáveis.
 
 ---
 # Variáveis
