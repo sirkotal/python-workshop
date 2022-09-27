@@ -13,7 +13,7 @@ class: inverse
 3. Hello World - O Primeiro Programa
 4. Variáveis
 5. Operações Aritméticas
-6. Estruturas Oondicionais (if)
+6. Estruturas Condicionais (if)
 7. Estruturas de Repetição (for, while)
 8. Operações com Listas
 9. Operações com Strings
