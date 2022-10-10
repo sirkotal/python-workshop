@@ -1,3 +1,3 @@
 # Introduction to Python
 
-For anyone who wants to spend 3 hours of their life being annoyed by me.
+Simple presentation for those who want to learn a bit of Python.
