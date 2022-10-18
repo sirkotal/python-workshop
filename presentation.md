@@ -644,8 +644,8 @@ Tal como nas listas, o **index operator []** permite-nos aceder a uma posição 
 
 ```python
 at = "FEUP"
-print(nome[2])  # Obtém a letra na posição 2 (terceira letra) da string
-print(nome[-1]) # Obtém a última letra da string
+print(at[2])  # Obtém a letra na posição 2 (terceira letra) da string
+print(at[-1]) # Obtém a última letra da string
 
 at[3] = "C"     # ERRO!
 ```
